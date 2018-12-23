@@ -21,14 +21,18 @@
 \setmonofont{Fira Mono}
 
 % define some lengths for internal spacing
-\newlength{\seplinewidth}    \setlength{\seplinewidth}{2cm}
-\newlength{\seplineheight}   \setlength{\seplineheight}{1pt}
-\newlength{\seplinedistance} \setlength{\seplinedistance}{0.3cm}
+\newlength{\seplinewidth}       \setlength{\seplinewidth}{2cm}
+\newlength{\seplineheight}      \setlength{\seplineheight}{1pt}
+\newlength{\seplinedistance}    \setlength{\seplinedistance}{0.3cm}
+
+\newlength{\edgemargin}         \setlength{\edgemargin}{0.2in}
+\newlength{\logowidth}          \setlength{\logowidth}{1.6in}
+\newlength{\logoheight}         \setlength{\logoheight}{0.5in}
 
 % colour options
-\definecolor{seplinecolour}{HTML}{357f2d}  % green
-\definecolor{iconcolour}{HTML}{2f3142}     % dark
-\definecolor{textcolour}{HTML}{2f3142}     % dark
+\definecolor{seplinecolour}{HTML}{000000}  % green
+\definecolor{iconcolour}{HTML}{000000}     % dark
+\definecolor{textcolour}{HTML}{000000}     % dark
 \definecolor{jobtitlecolour}{HTML}{474a65} % light dark
 
 % change global colour
@@ -46,33 +50,34 @@
     \begin{tikzpicture}
       % name
       \matrix[every node/.style={anchor=center,font=\huge},anchor=center] (name) {
-        \node{John}; \\
-        \node{Doe}; \\
-        \node{\color{jobtitlecolour}\normalsize\textit{job title}}; \\
+        \node{David}; \\
+        \node{Fischer}; \\
+        \node{\color{jobtitlecolour}\footnotesize\textit{Advertising, Security \& Privacy}}; \\
       };
+
       % sep line 1
       \node[below=\seplinedistance of name] (hl1) {};
       \draw[line width=\seplineheight,color=seplinecolour] (hl1)++(-\seplinewidth/2,0) -- ++(\seplinewidth,0);
+
       % contact info
       \matrix [below=\seplinedistance of hl1,%
-               column 1/.style={anchor=center,color=iconcolour},%
-               column 2/.style={anchor=west}] (contact){
-        \node{\faGlobe}; & \node{johndoe.com};\\
-        \node{\faEnvelope}; &\node{me@johndoe.com};\\
-        \node{\faPhone}; &\node{+1 781 555 1212}; \\
-        \node{\faGithub}; &\node{johndoe}; \\
+               column 1/.style={anchor=center,color=iconcolour,font=\footnotesize},%
+               column 2/.style={anchor=west,font=\footnotesize}] (contact) {
+        \node{\faEnvelope}; &\node{david@readthedocs.org}; \\
+        \node{\faPhone}; &\node{+1 (858) 245-9380}; \\
+        \node{\faGithub}; &\node{davidfischer}; \\
+        \node{\faLock}; &\node{\scriptsize{3010 78D6 3493 6CEB 7FCD}}; \\
+        \node{}; &\node{\scriptsize{F13B F0C9 B0AD A737 AB60}}; \\
       };
-      % sep line 2
-      \node[below=\seplinedistance of contact] (hl2) {};
-      \draw[line width=\seplineheight,color=seplinecolour] (hl2)++(-\seplinewidth/2,0) -- ++(\seplinewidth,0);
-      % interests
-      \matrix [below=\seplinedistance of hl2,
-         every node/.style={anchor=center,font=\LARGE}]
-         (interests) {
-        \node{\faCode}; & \node{\faCoffee}; &
-        \node{\faLock}; & \node{\faWrench}; &
-        \node{\faCameraRetro}; \\
-      }; 
+
+      %\matrix[below=\seplinedistance of contact,every %node/.style={anchor=center,font=\scriptsize}] (gpg) {
+      %  \node{};  \\
+      %  \node{};  \\
+      %};
+
+
+      %logo
+      \node[below=\logoheight of contact] (logo) {\includegraphics[width=\logowidth]{figures/logo}};
     \end{tikzpicture}
   \end{center}
   \vspace*{\fill}

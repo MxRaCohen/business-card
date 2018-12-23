@@ -1,13 +1,6 @@
 Business Card
 =============
 
-Example:
-
-<div>
-    <img src="images/front.png" alt-="front side business card" width="200px"/>
-    <img src="images/back.png" alt-="back side business card" width="200px"/>
-</div>
-
 How this business card was designed, is explained in [this blog post](https://olivierpieters.be/blog/2017/02/11/designing-a-business-card-in-latex).
 
 Requirements
@@ -18,23 +11,14 @@ Requirements
 * [Font Awesome](https://github.com/xdanaux/fontawesome-latex)
 * [Fira Sans](https://github.com/mozilla/Fira)
 
-It is also possible to use [this Docker container](https://hub.docker.com/r/accupara/business-cards/):
-
-```shell
-docker run \
-    --rm -it \
-    -v `pwd`:/tmp/src accupara/business-cards \
-    /bin/bash -c 'cd /tmp/src/src ; xelatex front.tex;'
-```
 
 Building Documents
 ------------------
 
-Build the front and back sides with XeLaTeX:
+Build the business card with XeLaTeX:
 
 ```shell
-xelatex src/front.tex
-xelatex src/back.tex
+xelatex businesscard.tex
 ```
 
 SVG Files

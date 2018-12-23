@@ -1,4 +1,7 @@
-build.sh
+*.aux
 *.log
-back.pdf
-front.pdf
+*.pdf
+*.dvi
+*.out
+*.txt
+*.gz
