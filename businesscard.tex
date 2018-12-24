@@ -10,7 +10,7 @@
 \usepackage{fontspec}        % load external fonts
 \usepackage{tikz}            % drawing
 \usepackage{fontawesome}     % icon font
-\usepackage{xcolor}          % more colour options
+\usepackage{xcolor}          % more color options
 
 % load and configure tikz libraries
 \usetikzlibrary{matrix,calc,positioning}
@@ -29,19 +29,17 @@
 \newlength{\edgemargin}         \setlength{\edgemargin}{0.2in}
 \newlength{\logowidth}          \setlength{\logowidth}{1.6in}
 
-% colour options
-\definecolor{seplinecolour}{HTML}{000000}  % green
-\definecolor{iconcolour}{HTML}{000000}     % dark
-\definecolor{textcolour}{HTML}{000000}     % dark
-\definecolor{jobtitlecolour}{HTML}{474a65} % light dark
+% color options
+\definecolor{textcolor}{HTML}{000000}       % dark
+\definecolor{secondarycolor}{HTML}{474a65}  % light dark
 
-% change global colour
+% change global color
 \makeatletter
 \newcommand{\globalcolor}[1]{%
   \color{#1}\global\let\default@color\current@color
 }
 \makeatother
-\AtBeginDocument{\globalcolor{textcolour}}
+\AtBeginDocument{\globalcolor{textcolor}}
 
 \begin{document}
   \thispagestyle{empty}
@@ -52,16 +50,16 @@
       \matrix[every node/.style={anchor=center,font=\huge},anchor=center] (name) {
         \node{David}; \\
         \node{Fischer}; \\
-        \node{\color{jobtitlecolour}\footnotesize\textit{Advertising, Security \& Privacy}}; \\
+        \node{\color{secondarycolor}\footnotesize\textit{Advertising, Security \& Privacy}}; \\
       };
 
       % sep line 1
       \node[below=\seplinedistance of name] (hl1) {};
-      \draw[line width=\seplineheight,color=seplinecolour] (hl1)++(-\seplinewidth/2,0) -- ++(\seplinewidth,0);
+      \draw[line width=\seplineheight,color=secondarycolor] (hl1)++(-\seplinewidth/2,0) -- ++(\seplinewidth,0);
 
       % contact info
       \matrix [below=\seplinedistance of hl1,%
-               column 1/.style={anchor=center,color=iconcolour,font=\footnotesize},%
+               column 1/.style={anchor=center,color=secondarycolor,font=\footnotesize},%
                column 2/.style={anchor=west,font=\footnotesize}] (contact) {
         \node{\faEnvelope}; &\node{david@readthedocs.org}; \\
         \node{\faPhone}; &\node{+1 (858) 245-9380}; \\
