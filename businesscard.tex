@@ -24,10 +24,10 @@
 \newlength{\seplinewidth}       \setlength{\seplinewidth}{2cm}
 \newlength{\seplineheight}      \setlength{\seplineheight}{1pt}
 \newlength{\seplinedistance}    \setlength{\seplinedistance}{0.3cm}
+\newlength{\seplogodistance}    \setlength{\seplogodistance}{0.25in}
 
 \newlength{\edgemargin}         \setlength{\edgemargin}{0.2in}
 \newlength{\logowidth}          \setlength{\logowidth}{1.6in}
-\newlength{\logoheight}         \setlength{\logoheight}{0.5in}
 
 % colour options
 \definecolor{seplinecolour}{HTML}{000000}  % green
@@ -70,14 +70,8 @@
         \node{}; &\node{\scriptsize{F13B F0C9 B0AD A737 AB60}}; \\
       };
 
-      %\matrix[below=\seplinedistance of contact,every %node/.style={anchor=center,font=\scriptsize}] (gpg) {
-      %  \node{};  \\
-      %  \node{};  \\
-      %};
-
-
       %logo
-      \node[below=\logoheight of contact] (logo) {\includegraphics[width=\logowidth]{figures/logo}};
+      \node[below=\seplogodistance of contact] (logo) {\includegraphics[width=\logowidth]{figures/logo}};
     \end{tikzpicture}
   \end{center}
   \vspace*{\fill}
