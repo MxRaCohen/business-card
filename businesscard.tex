@@ -24,7 +24,7 @@
 \newlength{\seplinewidth}       \setlength{\seplinewidth}{2cm}
 \newlength{\seplineheight}      \setlength{\seplineheight}{1pt}
 \newlength{\seplinedistance}    \setlength{\seplinedistance}{0.3cm}
-\newlength{\seplogodistance}    \setlength{\seplogodistance}{0.25in}
+\newlength{\seplogodistance}    \setlength{\seplogodistance}{0.15in}
 
 \newlength{\edgemargin}         \setlength{\edgemargin}{0.2in}
 \newlength{\logowidth}          \setlength{\logowidth}{1.2in}
@@ -48,9 +48,9 @@
     \begin{tikzpicture}
       % name
       \matrix[every node/.style={anchor=center,font=\huge},anchor=center] (name) {
-        \node{David}; \\
-        \node{Fischer}; \\
-        \node{\color{secondarycolor}\footnotesize\textit{Advertising, Security \& Privacy}}; \\
+        \node{Ra}; \\
+        \node{Cohen}; \\
+        \node{\color{secondarycolor}\footnotesize\textit{Data Science \& People}}; \\
       };
 
       % sep line 1
@@ -61,11 +61,11 @@
       \matrix [below=\seplinedistance of hl1,%
                column 1/.style={anchor=center,color=secondarycolor,font=\footnotesize},%
                column 2/.style={anchor=west,font=\footnotesize}] (contact) {
-        \node{\faEnvelope}; &\node{david@readthedocs.org}; \\
-        \node{\faPhone}; &\node{+1 (858) 245-9380}; \\
-        \node{\faGithub}; &\node{davidfischer}; \\
-        \node{\faLock}; &\node{\scriptsize{3010 78D6 3493 6CEB 7FCD}}; \\
-        \node{}; &\node{\scriptsize{F13B F0C9 B0AD A737 AB60}}; \\
+        \node{\faEnvelope}; &\node{cohen@readthedocs.org}; \\
+        \node{\faPhone}; &\node{+1 (813) 992-1280}; \\
+        \node{\faGithub}; &\node{MxRaCohen}; \\
+        \node{\faLock}; &\node{\scriptsize{E8DB 6E62 B652 E3B5 D442}}; \\
+        \node{}; &\node{\scriptsize{ A1A5 A39D 8A12 2ABE CBA6}}; \\
       };
 
       %logo
